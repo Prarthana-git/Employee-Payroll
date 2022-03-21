@@ -53,6 +53,24 @@ class EmployeeDetails {
         
          });
     }
-}
+    updateEmployee(empId,employee,callback){
+        try{
+            Employee.findByIdAndUpdate(empId,{
+                firstName:employee.firstName,
+				lastName:employee.lastName,
+				emailId:employee.emailId,
+				gender:employee.gender,
+				salary:employee.salary,
+				department:employee.department
+              },{new:true},(error,data)=>{
+                  return error? callback(error,null):callback(null,data);
+              })
+            }catch(error){
+                return callback(error,null);
+
+            }
+        }
+    }
+
 
 module.exports = new EmployeeDetails();
