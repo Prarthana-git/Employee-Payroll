@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema({
     lastName: {
         type: String,
         required: true,
-        // validate: /^[a-zA-Z ]{3,30}$/
+        validate: /^[a-zA-Z ]{3,30}$/
     },
     email: {
         type: String,
