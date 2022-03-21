@@ -12,4 +12,6 @@ app.post('/login',userController.login);
 app.post('/addEmployee',helper.verifyToken,employee.createEmployee);
 
 app.get('/getEmployee',helper.verifyToken,employee.getAllEmployees);
+
+app.get('/getById/:empId',helper.verifyToken,employee.getOne);
 };

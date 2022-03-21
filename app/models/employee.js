@@ -47,6 +47,12 @@ class EmployeeDetails {
             return error ? callback(error, null) : callback(null, data);
         });
     }
+    getOneEmployee(empId,callback){
+        Employee.findById(empId,(error,data)=>{
+        return error ? callback(error, null) : callback(null, data);
+        
+         });
+    }
 }
 
 module.exports = new EmployeeDetails();

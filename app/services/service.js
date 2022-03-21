@@ -19,9 +19,8 @@ class UserService {
         bcrypt.compare(loginInfo.password, data.password, (err, data) => {
           if (err) {
             callback(err, null);
-          } console.log(data);
+          } 
           if(data){
-               console.log('data');
             const token=help.generateToken(loginInfo);
             return callback(null,token); 
           } else {

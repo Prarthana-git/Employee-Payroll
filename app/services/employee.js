@@ -9,7 +9,12 @@ class EmployeeService {
     getAllEmployees(callback){
         employeeModel.getAllEmployees((error,data)=>{
             return error?callback(error,null):callback(null,data);
-        })
+        });
+    }
+    getEmployeeById(employeeId,callback){
+        employeeModel.getOneEmployee(employeeId, (error, empData) => {
+			return error ? callback(error, null) : callback(null, empData);
+		});
     }
 }
 module.exports=new EmployeeService();
