@@ -6,5 +6,10 @@ class EmployeeService {
 			return error ? callback(error, null) : callback(null, data);
 		});
 	}
+    getAllEmployees(callback){
+        employeeModel.getAllEmployees((error,data)=>{
+            return error?callback(error,null):callback(null,data);
+        })
+    }
 }
 module.exports=new EmployeeService();

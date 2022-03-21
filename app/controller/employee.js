@@ -35,5 +35,21 @@ class EmployeeController{
             })
         })
     }
+    getAllEmployees(req,res){
+        employeeService.getAllEmployees((error,data)=>
+        {
+            if(error){
+                return res.status(500).send({
+                    success:false,
+                    message:"Some error occured"
+                });
+            }
+            res.status(200).send({
+                success:true,
+                message:"Retrieved employee details",
+                data:data
+            })
+        })
+    }
 }
 module.exports=new EmployeeController();

@@ -42,5 +42,11 @@ class EmployeeDetails {
             return error ? callback(error, null) : callback(null, data);
         })
     }
+    getAllEmployees(callback) {
+        Employee.find({}, (error, data) => {
+            return error ? callback(error, null) : callback(null, data);
+        });
+    }
 }
+
 module.exports = new EmployeeDetails();

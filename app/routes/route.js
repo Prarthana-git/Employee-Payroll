@@ -10,4 +10,6 @@ app.post('/register', userController.register);
 app.post('/login',userController.login);
 
 app.post('/addEmployee',helper.verifyToken,employee.createEmployee);
+
+app.get('/getEmployee',helper.verifyToken,employee.getAllEmployees);
 };
