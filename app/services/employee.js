@@ -31,5 +31,19 @@ class EmployeeService {
             return callback(error,null)
         }
     }
+    removeEmployee(empId, callback){
+		try {
+			employeeModel.removeEmployee(empId, (error, data) => {
+				if(!empId){
+					return callback(error, null);
+				}
+				else{
+					return callback(null, data);
+				}
+			});
+		}catch(error) {
+			return callback(error, null);
+		}
+	}
 }
 module.exports=new EmployeeService();

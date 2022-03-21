@@ -70,6 +70,15 @@ class EmployeeDetails {
 
             }
         }
+        removeEmployee(empId, callback){
+            try{
+                Employee.findByIdAndRemove(empId, (err, data) => {
+                    return err ? callback(err, null) : callback(null, data);
+                });
+            }catch(err){
+                callback(err, null);
+            }
+        }
     }
 
 
