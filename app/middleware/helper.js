@@ -1,23 +1,29 @@
+const { header } = require('express/lib/request');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 class Helper {
   generateToken(loginInput) {
-    const token = jwt.sign({ loginInput }, process.env.TOKEN_GENERATE, {
+    // console.log("loginInput",loginInput);
+    const token = jwt.sign({ email:loginInput.email}, process.env.TOKEN_GENERATE, {
       expiresIn: '30000s'
     });
     return token;
   }
   verifyToken(req, res, next) {
-    let token = req.get('token');
+    let token = req.header('token');
     if (token) {
-      jwt.verify(token,process.env.TOKEN_GENERATE, (error)=>{
+      jwt.verify(token,process.env.TOKEN_GENERATE, (error,data)=>{
         if (error) {
           return res.status(400).send({
             success: false,
             message: "Inavalid token!"
           })
         }
-        else { next(); }
+        else{
+          console.log("data",data)
+          req.body.email=data.email;
+          // console.log("req.body.email",req.body.email);
+           next(); }
       })
     } else {
       return res.status(401).send({

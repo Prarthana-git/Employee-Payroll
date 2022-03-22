@@ -14,14 +14,14 @@ class UserService {
   };
 
   loginUser(loginInfo, callback) {
-    userModel.loginUser(loginInfo, (err, data) => {
-      if (data) {
-        bcrypt.compare(loginInfo.password, data.password, (err, data) => {
+    userModel.loginUser(loginInfo, (err, result) => {
+      if (result) {
+        bcrypt.compare(loginInfo.password, result.password, (err, data) => {
           if (err) {
             callback(err, null);
           } 
           if(data){
-            const token=help.generateToken(loginInfo);
+            const token=help.generateToken(result);
             return callback(null,token); 
           } else {
             callback(new Error('Password does not match'));

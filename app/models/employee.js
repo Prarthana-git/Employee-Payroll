@@ -42,8 +42,8 @@ class EmployeeDetails {
             return error ? callback(error, null) : callback(null, data);
         })
     }
-    getAllEmployees(callback) {
-        Employee.find({}, (error, data) => {
+    getAllEmployees(body,callback) {
+        Employee.find({emailId:body.email}, (error, data) => {
             return error ? callback(error, null) : callback(null, data);
         });
     }

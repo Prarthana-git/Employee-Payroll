@@ -36,7 +36,7 @@ class EmployeeController {
         })
     }
     getAllEmployees(req, res) {
-        employeeService.getAllEmployees((error, data) => {
+        employeeService.getAllEmployees(req.body,(error, data) => {
             if (error) {
                 return res.status(500).send({
                     success: false,

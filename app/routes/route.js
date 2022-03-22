@@ -14,5 +14,5 @@ app.post('',helper.verifyToken,employee.createEmployee);
 app.get('',helper.verifyToken,employee.getAllEmployees);
 app.get('/:empId',helper.verifyToken,employee.getOne);
 app.put('/:empId',helper.verifyToken,employee.updateEmployee);
-app.delete("/:empId", helper.verifyToken, employee.removeEmployee);
+app.delete('/:empId', helper.verifyToken, employee.removeEmployee);
 };

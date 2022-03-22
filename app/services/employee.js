@@ -7,8 +7,8 @@ class EmployeeService {
 			return error ? callback(error, null) : callback(null, data);
 		});
 	}
-    getAllEmployees(callback){
-        employeeModel.getAllEmployees((error,data)=>{
+    getAllEmployees(body,callback){
+        employeeModel.getAllEmployees(body,(error,data)=>{
             return error?callback(error,null):callback(null,data);
         });
     }

@@ -23,6 +23,8 @@
     "express": "^4.17.3",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.7"
+    "mongoose": "^6.2.7",
+    "swagger": "^0.7.5",
+    "swagger-ui-express": "^4.3.0"
   }
 }
