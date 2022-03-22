@@ -10,9 +10,9 @@ app.post('/register', userController.register);
 app.post('/login',userController.login);
 
 //CRUD api for employee
-app.post('/addEmployee',helper.verifyToken,employee.createEmployee);
-app.get('/getEmployee',helper.verifyToken,employee.getAllEmployees);
-app.get('/getById/:empId',helper.verifyToken,employee.getOne);
-app.put('/updateById/:empId',helper.verifyToken,employee.updateEmployee);
-app.delete("/deleteEmployee/:empId", helper.verifyToken, employee.removeEmployee);
+app.post('',helper.verifyToken,employee.createEmployee);
+app.get('',helper.verifyToken,employee.getAllEmployees);
+app.get('/:empId',helper.verifyToken,employee.getOne);
+app.put('/:empId',helper.verifyToken,employee.updateEmployee);
+app.delete("/:empId", helper.verifyToken, employee.removeEmployee);
 };

@@ -22,7 +22,7 @@ class Helper {
     } else {
       return res.status(401).send({
         success: false,
-        message: 'Unauthorized token',
+        message: 'Authorized token is required',
       })
     }
   }
