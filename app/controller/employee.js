@@ -4,12 +4,12 @@ const validInput = require('../middleware/employeeValidation');
 class EmployeeController {
     createEmployee(req, res) {
         const employee = {
-            firstName: req.body.firstName,
+            firstName:req.body.firstName,
             lastName: req.body.lastName,
             emailId: req.body.emailId,
             gender: req.body.gender,
             salary: req.body.salary,
-            department: req.body.department
+            department: req.body.department,
         };
         const userInputValidation = validInput.validate(employee);
         if (userInputValidation.error) {
@@ -36,7 +36,7 @@ class EmployeeController {
         })
     }
     getAllEmployees(req, res) {
-        employeeService.getAllEmployees(req.body,(error, data) => {
+        employeeService.getAllEmployees((error, data) => {
             if (error) {
                 return res.status(500).send({
                     success: false,

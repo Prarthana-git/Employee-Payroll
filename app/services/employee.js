@@ -3,12 +3,13 @@ const employeeModel = require("../models/employee");
 
 class EmployeeService {
 	createEmployee(empData, callback) {
+        // console.log('empData',empData);
 		employeeModel.createEmployee(empData, (error, data) => {
 			return error ? callback(error, null) : callback(null, data);
 		});
 	}
-    getAllEmployees(body,callback){
-        employeeModel.getAllEmployees(body,(error,data)=>{
+    getAllEmployees(callback){
+        employeeModel.getAllEmployees((error,data)=>{
             return error?callback(error,null):callback(null,data);
         });
     }

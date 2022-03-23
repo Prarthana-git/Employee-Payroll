@@ -15,6 +15,6 @@ const employeeValidation=Joi.object({
 	salary: Joi.string()
 		.required(),
 	department: Joi.string()
-		.required()
+		.required(),
 })
 module.exports=employeeValidation;

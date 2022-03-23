@@ -9,7 +9,7 @@
             "url": "https://opensource.org/licenses/MIT"
         }
     },
-    "host": "localhost:3000",
+    "host": "localhost:4000",
     "basePath": "/",
     "tags": [
     ],
@@ -19,7 +19,7 @@
     "paths": {
         "/register": {
           "post": {
-            "tags": ["Register"],
+            "tags": ["user"],
             "description": "Register new user",
             "parameters": [
               {
@@ -46,7 +46,7 @@
     },
     "/login":{
         "post": {
-            "tags": ["Login"],
+            "tags": ["user"],
             "description": "Login user",
             "parameters": [
               {
@@ -68,9 +68,9 @@
             }
         }
     },
-    "": {
+    "/create": {
       "post": {
-        "tags": [],
+        "tags": ["employee"],
         "description": "Create new employee",
         "parameters": [
           {
@@ -96,11 +96,13 @@
             "JWT":[]
           }
         ]
-      },
+      }
+    },
+    "/getall":{
       "get": {
-        "tags": ["Get Employee"],
+        "tags": ["employee"],
         "description": "Retrieve all employees",
-        "parameters": [
+        "parameters": [ 
         ],
         "responses": {
           "200": {
@@ -117,10 +119,9 @@
         ]
       }
     },
-
     "/{empId}":{
       "get": {
-        "tags": ["Get Employee"],
+        "tags": ["employee"],
         "description": "Retrieve employee by Id",
         "parameters": [
           {
@@ -131,7 +132,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Retrieved all employees"
+            "description": "Retrieved employee"
           },
           "400": {
             "description":"Bad Request"
@@ -144,7 +145,7 @@
       ]
     },
     "put":{
-      "tags": ["Update Employee"],
+      "tags": ["employee"],
       "description": "Update Employee Data",
       "parameters": [
         {
@@ -178,7 +179,7 @@
     ]
   },
   "delete":{
-    "tags": ["Delete Employee"],
+    "tags": ["employee"],
     "description": "Delete Employee Data",
     "parameters": [
       {

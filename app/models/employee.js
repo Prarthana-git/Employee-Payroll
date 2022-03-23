@@ -24,26 +24,27 @@ const EmployeeSchema = mongoose.Schema({
     },
     department: {
         type: String,
-        required: true
-    }
+        required: true,
+    },
 })
 const Employee = mongoose.model('employees', EmployeeSchema);
 class EmployeeDetails {
     createEmployee(empData, callback) {
         const employee = new Employee({
-            firstName: empData.firstName,
+            firstName:empData.firstName,
             lastName: empData.lastName,
             emailId: empData.emailId,
             gender: empData.gender,
             salary: empData.salary,
-            department: empData.department
+            department: empData.department,
         })
+        // console.log('employee',employee)
         employee.save({}, (error, data) => {
             return error ? callback(error, null) : callback(null, data);
         })
     }
-    getAllEmployees(body,callback) {
-        Employee.find({emailId:body.email}, (error, data) => {
+    getAllEmployees(callback) {
+        Employee.find({}, (error, data) => {
             return error ? callback(error, null) : callback(null, data);
         });
     }
