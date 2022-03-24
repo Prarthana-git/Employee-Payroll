@@ -25,7 +25,40 @@
           "firstName": "Rohit",
           "lastName": "Bagul",
           "email": "rohitbagul.12@gmail.com"
-      }
+      },
+      "login": {
+        "email": "batiy@gmail.com",
+        "password": "Batiya@95"
+    },
+    "loginwithwrongEmail": {
+        "email": "pujachaudhari@gmail.com",
+        "password": "pooja@44Gh"
+    },
+    "loginwithnoEmail": {
+        "password": "pooja@44Gh"
+    },
+    "loginwithnoPassword": {
+        "email": "poojachaudhari@gmail.com"
+    },
+    "loginwrongPassword": {
+        "email": "poojachaudhari@gmail.com",
+        "password": "Pooja@44Gh"
+    },
+    "userforgetPassword": {
+        "email": "cprarthana9@gmail.com"
+    },
+    "userforgetPasswordNotregistered": {
+        "email": "sd@gmail.com"
+    },
+    "userResetPassword":"hdk@542bcAAD",
+    "userResetData":{
+     "password":"hdk@42bcAAD",
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbklucHV0Ijp7ImVtYWlsIjoiY3ByYXJ0aGFuYTlAZ21haWwuY29tIiwiX2lkIjoiNjEyM2MwZDljMDMzY2UwZGU0ODE2N2U4In0sImlhdCI6MTYyOTc3NjgxOSwiZXhwIjoxNjI5ODA2ODE5fQ.yOfqDGqr2lSx9Fi_rVaU1gT51N_szm5VxvS6ujtQ8bQ"
+    },
+    "userResetInvalidCoupon":{
+        "password":"hdk@542bcAAD",
+        "token" : "7ImVtYWlsIjoiY3B"
+    }
     }
   }
   

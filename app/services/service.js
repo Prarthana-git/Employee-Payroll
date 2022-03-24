@@ -23,7 +23,7 @@ class UserService {
           }
           if (data) {
             // const token=help.generateToken(result);
-            console.log("result", result);
+            // console.log("result", result);
             const token = jwt.sign(
               { email: result.email, id: result._id },
               process.env.TOKEN_GENERATE

@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 class Helper {
   generateToken(loginInput) {
-    console.log("loginInput", loginInput);
+    // console.log("loginInput", loginInput);
     const token = jwt.sign({ "id": loginInput._id }, process.env.TOKEN_GENERATE)
     return token;
   }

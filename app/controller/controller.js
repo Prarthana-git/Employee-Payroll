@@ -60,7 +60,7 @@ class Controller {
                 if (error) {
                     return res.status(403).json({
                         success: false,
-                        message: 'please check email and password ',
+                        message: 'please check email and password',
                         error
                     });
                 } else {
