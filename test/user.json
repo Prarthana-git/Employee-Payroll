@@ -1,0 +1,31 @@
+{
+    "user": {
+      "register": {
+          "firstName": "Prarthana",
+          "lastName": "Chaudhari",
+          "email": "prarthanachaudhari@gmail.com",
+          "password": "Prarthana@5554f"
+      },
+      "registerwithnofirstName": {
+          "lastName": "Chaudhari",
+          "email": "chaudhari@gmail.com",
+          "password": "Priti@452g"
+      },
+      "registerwithnolastName": {
+          "firstName": "Priti",
+          "email": "pritichaudhari@gmail.com",
+          "password": "Priti@452g"
+      },
+      "registerwithnoemailId": {
+          "firstName": "Pranit",
+          "lastName": "Patil",
+          "password": "Pranit!hs5"
+      },
+      "registrationWithNoPassword": {
+          "firstName": "Rohit",
+          "lastName": "Bagul",
+          "email": "rohitbagul.12@gmail.com"
+      }
+    }
+  }
+  

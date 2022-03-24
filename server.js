@@ -23,3 +23,4 @@ require('./app/routes/route.js')(app);
 app.listen(4000, () => {
     console.log('Server is listening on port 4000')
 })
+module.exports=app
