@@ -68,7 +68,7 @@
             }
         }
     },
-    "/create": {
+    "/employee": {
       "post": {
         "tags": ["employee"],
         "description": "Create new employee",
@@ -96,9 +96,7 @@
             "JWT":[]
           }
         ]
-      }
-    },
-    "/getall":{
+      }, 
       "get": {
         "tags": ["employee"],
         "description": "Retrieve all employees",
