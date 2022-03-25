@@ -12,7 +12,7 @@ class Helper {
     if (token) {
       const result = jwt.verify(token, process.env.TOKEN_GENERATE)
       if (result) {
-        console.log("data", result)
+        // console.log("data", result)
         req.body.userId = result.id;
         // console.log("req.body", req.body);
         next();

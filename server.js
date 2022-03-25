@@ -1,6 +1,7 @@
 const express = require('express');
 const swaggerUI = require("swagger-ui-express");
 const swaggerDocument = require("./swagger/swagger.json");
+require('dotenv').config();
 //create express app
 const app = express();
 
@@ -20,7 +21,7 @@ dbConfig.dbConnectiom();
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 require('./app/routes/route.js')(app);
 
-app.listen(4000, () => {
-    console.log('Server is listening on port 4000')
+app.listen(process.env.PORT, () => {
+    console.log(`Server is listening on port ${process.env.PORT}`)
 })
 module.exports=app
