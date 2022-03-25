@@ -5,7 +5,7 @@ const redisDatabase = async () => {
         await client.connect();    
         logger.info("Redis Connected")
     } catch (error) {
-        console.log(error);
+        console.log(error); 
     }
 }
 module.export={client,redisDatabase};

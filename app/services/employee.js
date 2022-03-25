@@ -11,9 +11,9 @@ class EmployeeService {
   getAllEmployees(callback) {
     const empData = employeeModel.getAllEmployees((error, data) => {
       if (error) {
-        return error;
+        callback (error,null);
       } else {
-        client.set("allEmployee", JSON.stringify(data));
+        client.set("allEmployee",60, JSON.stringify(data));
         return empData;
       }
     });

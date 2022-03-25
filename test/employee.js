@@ -26,20 +26,20 @@ chai.use(chaihttp);
     })
 
     describe("Add Employee",()=>{
-        // it("givenDataIsValid_ShouldCreateNewEmployee",(done)=>{
-        //     const userData=employeeInput.employeeData;
-        //     chai.request(server)
-        //     .post("/employee")
-        //     .send(userData)
-        //     .set('token',token)
-        //     .end((error,res)=>{
-        //         res.should.have.status(201);
-        //         res.body.should.have.property('success').eql(true);
-        //         res.body.should.have.property('message').eql("Employee created successfully");
-        //         res.body.should.have.property('data');
-        //         done();
-        //       });
-        // })
+        it("givenDataIsValid_ShouldCreateNewEmployee",(done)=>{
+            const userData=employeeInput.employeeData;
+            chai.request(server)
+            .post("/employee")
+            .send(userData)
+            .set('token',token)
+            .end((error,res)=>{
+                res.should.have.status(201);
+                res.body.should.have.property('success').eql(true);
+                res.body.should.have.property('message').eql("Employee created successfully");
+                res.body.should.have.property('data');
+                done();
+              });
+        })
         it("givenNameIsInValid_shouldFailToCreateNewEmployee", (done) => {
             const userData = employeeInput.employeeWrongName;
             chai.request(server)
