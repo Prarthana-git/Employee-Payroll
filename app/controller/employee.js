@@ -52,7 +52,7 @@ class EmployeeController {
     }
     getOne(req, res) {
         const empId = req.params.empId;
-        employeeService.getEmployeeById(empId, (error, empData) => {
+      const data =  employeeService.getEmployeeById(empId, (error, empData) => {
             if (error) {
                 return res.status(400).send({
                     success: false,
