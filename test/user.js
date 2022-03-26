@@ -9,24 +9,24 @@ chai.should();
 chai.use(chaihttp);
 
 describe('register',()=>{
-    // it('givenValidDataItShould_makePostRequestAndRegisterUser_andReturnsStatusCodeAs201',(done)=>{
-    //     const userData=userDetails.user.register;
-    //     chai.request(server)
-    //     .post('/register')
-    //     .send(userData)
-    //     .end((err,res)=>{
-    //         if (err){
-    //             return done(err);
-    //         }
-    //         res.should.have.status(201);
-    //         res.body.should.be.a('object')
-    //         res.body.should.have.property('success').eql(true);
-    //         res.body.should.have.property('message').eql('User Registered');
-    //         res.body.should.have.property('data').should.be.a('object');
-    //         done();
-    //     })
+    it('givenValidDataItShould_makePostRequestAndRegisterUser_andReturnsStatusCodeAs201',(done)=>{
+        const userData=userDetails.user.register;
+        chai.request(server)
+        .post('/register')
+        .send(userData)
+        .end((err,res)=>{
+            if (err){
+                return done(err);
+            }
+            res.should.have.status(201);
+            res.body.should.be.a('object')
+            res.body.should.have.property('success').eql(true);
+            res.body.should.have.property('message').eql('User Registered');
+            res.body.should.have.property('data').should.be.a('object');
+            done();
+        })
 
-    // })
+    })
     it('givenEmptyFirstName_andOtherValidData_failsToMakePOSTRequestToRegisterUser_andReturnsStatusCodeAs400', (done) => {
         const userData = userDetails.user.registerwithnofirstName;
         chai.request(server)

@@ -147,7 +147,7 @@ chai.use(chaihttp);
                   res.body.should.have.property('message').eql('Retrieved employee details');
                   res.body.should.have.property('data');
                   done();
-                });
+                })
             });
         
             it("givenInValidId_shouldFailTo_retrieveOneEmployeeData", (done) => {

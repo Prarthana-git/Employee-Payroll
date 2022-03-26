@@ -1,7 +1,7 @@
-const client = require("../../config/redis");
+const {client} = require("../../config/redis");
 
  const getRedis = async (req, res, next) => {
-  const redisData = await client.get("allEmployee");
+  const redisData = await client.get("employee");
   if (redisData) {
     res.status(200).json({
       data: JSON.parse(redisData),

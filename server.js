@@ -1,7 +1,7 @@
 const express = require("express");
 const swaggerUI = require("swagger-ui-express");
 const swaggerDocument = require("./swagger/swagger.json");
-const {redisDatabase } = require('./config/redis');
+const {redisDatabase} = require('./config/redis');
 require("dotenv").config();
 //create express app
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //parse the request from user
 app.use(express.json());
-
+redisDatabase();
 // Configuring the database
 const dbConfig = require("./config/database.config.js");
 dbConfig.dbConnectiom();
@@ -19,7 +19,7 @@ dbConfig.dbConnectiom();
 //     res.json({ "message": 'Welcome to Employee Payrall Application' });
 
 // })
-redisDatabase;
+
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 require("./app/routes/route.js")(app);
 

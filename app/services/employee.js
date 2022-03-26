@@ -13,7 +13,7 @@ class EmployeeService {
       if (error) {
         callback (error,null);
       } else {
-        client.set("allEmployee",60, JSON.stringify(data));
+        client.set("employee", JSON.stringify(data));
         return empData;
       }
     });
